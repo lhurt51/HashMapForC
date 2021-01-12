@@ -43,8 +43,8 @@ t_hashlst	*lookup(char *s)
 
 // char	*mystrdup(char *);
 
-/* install: put (name, defn) in hashtab */
-t_hashlst	*install(char *name, char *defn)
+/* put: put (name, defn) in hashtab */
+t_hashlst	*put(char *name, char *defn)
 {
 	t_hashlst		*lst;
 	unsigned int	hval;
@@ -75,17 +75,17 @@ int		main(void)
 {
 	t_hashlst	*tmp;
 
-	install("hello", "niceeeee man");
-	install("elloh", "This is great");
-	install("code", "if this equals that");
-	install("for", "for loops are great wish i could use them");
+	put("hello", "niceeeee man");
+	put("elloh", "This is great");
+	put("code", "if this equals that");
+	put("for", "for loops are great wish i could use them");
 	tmp = lookup("hello");
 	if (tmp != NULL)
 		printf("Name: %s, Def: %s\n", tmp->name, tmp->defn);
 	tmp = lookup("elloh");
 	if (tmp != NULL)
 		printf("Name: %s, Def: %s\n", tmp->name, tmp->defn);
-	install("elloh", "Diffenrent Def");
+	put("elloh", "Diffenrent Def");
 	tmp = lookup("elloh");
 	if (tmp != NULL)
 		printf("Name: %s, Def: %s\n", tmp->name, tmp->defn);
